@@ -23,6 +23,7 @@
         }
         public Category()
         {
+            _id = Guid.NewGuid();
             _products = new List<Products>();
         }
     }

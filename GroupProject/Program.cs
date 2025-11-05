@@ -1,4 +1,6 @@
 using GroupProject.Data;
+using GroupProject.Data.RespositoryServices;
+using GroupProject.DI;
 using Microsoft.EntityFrameworkCore;
 
 namespace GroupProject
@@ -10,15 +12,11 @@ namespace GroupProject
             var builder = WebApplication.CreateBuilder(args);
 
             //Add controller services
-            builder.Services.AddControllers();
-            builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddDbContextPool<ApplicationDbContext>(options => options.UseSqlServer(
-                builder.Configuration.GetConnectionString("Default")));
+                builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
-
-            //add swagger service
-            builder.Services.AddSwaggerGen();
+            // Services
+            builder.Services.DIServices();
 
             var app = builder.Build();
 
