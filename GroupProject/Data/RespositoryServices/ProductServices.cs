@@ -13,5 +13,10 @@ namespace GroupProject.Data.RespositoryServices
         {
             return _context.Products.ToList();
         }
+
+        public Products GetSingle(Guid id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
