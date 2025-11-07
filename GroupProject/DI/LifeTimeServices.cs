@@ -3,9 +3,9 @@ using GroupProject.Data.RespositoryServices;
 
 namespace GroupProject.DI
 {
-    public static class LifeTimeServices
+    internal static class LifeTimeServices
     {
-        public static IServiceCollection DIServices(this IServiceCollection services)
+        internal static IServiceCollection DIServices(this IServiceCollection services)
         {
             services.AddControllers();
             services.AddEndpointsApiExplorer();
