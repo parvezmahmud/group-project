@@ -1,5 +1,6 @@
 ﻿using GroupProject.Data;
 using GroupProject.Data.RespositoryServices;
+using System.Text.Json.Serialization;
 
 namespace GroupProject.DI
 {
@@ -7,7 +8,7 @@ namespace GroupProject.DI
     {
         internal static IServiceCollection DIServices(this IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddJsonOptions(options=>options.JsonSerializerOptions.ReferenceHandler=ReferenceHandler.IgnoreCycles);
             services.AddEndpointsApiExplorer();
 
             //add swagger service

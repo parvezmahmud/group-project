@@ -4,6 +4,7 @@
     {
         private readonly Guid _id;
         private string _specification=string.Empty;
+        private Guid _productID;
         private Products _product;
 
 
@@ -16,6 +17,12 @@
         {
             get => _specification;
             set => _specification = value;
+        }
+
+        public Guid ProductID
+        {
+            get => _productID;
+            set => _productID = value;
         }
         public Products Product
         {
